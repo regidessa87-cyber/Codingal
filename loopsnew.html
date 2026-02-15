@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Methods And Loops</title>
+</head>
+<body>
+
+    <h3>Data Report</h3>
+    <p id="date-output"></p>
+    <p id="loop-output"></p>
+    <p id="rounded-output"></p>
+
+    <script>
+        const today = new Date().toDateString();
+        document.getElementById("date-output").innerHTML = "<b>Current Date:</b> " + today;
+
+        let numList = "";
+        for (let i = 0; i < 5; i++) {
+
+            let randomInt = Math.floor(Math.random() * 100) + 1;
+            numList += randomInt + (i < 4 ? ", " : ""); 
+        }
+        document.getElementById("loop-output").innerHTML = "<b>Random Set:</b> " + numList;
+
+        let rawNum = Math.random() * 50; 
+        let roundedNum = Math.round(rawNum);
+        document.getElementById("rounded-output").innerHTML = "<b>Rounded Random (0-50):</b> " + roundedNum;
+    </script>
+
+</body>
+</html>
